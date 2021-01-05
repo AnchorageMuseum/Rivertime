@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+<style>
+  .DetaildateM {
+    font-size: 8vw;
+}
+.tdTextM {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 5vw;
+}
+</style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+ <div id="RiverDetail" class="container hiddenDIV" style="opacity: 0;">
+  <table id="Data" class="Detaildata hide-on-small-only" style="table-layout: fixed; width: 100%; border-collapse: collapse; margin-top: 5%;">
+      <tbody>
+          <tr>
+            <td colspan="2" width="40%" style="text-align: center; padding: 3vw 0 3vw 0;">
+              <div id="DetailTime0" class="Detailtime" style="font-size: 7vw; line-height: 8vw; font-weight: 200;"></div>
+              <div id="DetailDate0" class="Detaildate"><div>
+
+              </td>
+            <td rowspan="9" style="width: 60%; padding: 0; background: url('images/RiverDetail<%= selectedRiver.sequenceNumber %>.png'); background-size: cover;"> &nbsp;
+              <table style="border: 0; padding: 0; margin: 0;">
+                <tr>
+                  <td class="d" width="100%" align="center">
+                      <img src="svg/RiverTimeClockPointer.svg">
+                  </td>
+                </tr>
+                <td class="c"  width="100%" style="padding: 0 4vw 0 4vw;">
+                  <div id="Clock0Detail" class="clock">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds.svg" class="clockDial" style="z-index: 103;">
+                 </div>
+                </td>      
+              </table>
+            </td>
+          </tr>
+          <tr >
+            <td class='tdText'>NAME</td><td class='tdText' style="line-height: 1.4vw"><span ><%= selectedRiver.name %></span><br><span style="font-size: 1.1vw;"><%= selectedRiver.indigenousName %><br><%= selectedRiver.translation %></span></td>
+          </tr>
+          <tr>
+            <td class='tdText'>CURRENT FLOW</td><td class='tdText'><%= selectedRiver.currentFlow %> cfs</td>
+          </tr>
+          <tr>
+            <td class='tdText'>MEAN FLOW</td><td class='tdText'><%= Math.round(selectedRiver.meanFlow) %> cfs</td>
+          </tr>
+          <!--tr>
+            <td class='tdText'>TEMP</td><td class='tdText'>52&deg; F (11&deg; C)</td>
+          </tr-->
+          <tr>
+            <td class='tdText'>LATITUDE</td><td class='tdText'><%= selectedRiver.latitude %></td>
+          </tr>
+          <tr>
+            <td class='tdText'>LONGITUDE</td><td class='tdText'><%= selectedRiver.longitude %></td>
+          </tr>
+          <tr>
+            <td class='tdText'>ELEVATION</td><td class='tdText'><%= selectedRiver.elevation %></td>
+          </tr>
+          <tr >
+            <td class='tdText'>DRAINAGE</td><td class='tdText'><%= selectedRiver.drainageArea %> mi<sup>2</sup></td>
+          </tr>
+            <td colspan="2" class='tdText' style="vertical-align: top; padding-top: 12px; font-size: 1.1vw;"><%= selectedRiver.description %><br><br><br>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="border: 0; width: 100%;">
+                <div style="filter: grayscale(99); width: 100%; margin-left: auto; margin-right: auto; margin-top: 15vw;">
+                  <iframe src="<%= selectedRiver.googleMap%>>" 
+                  frameborder="0"  style="width: 100%; height: 50vw; border:0;margin-left: auto; margin-right: auto;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>            </td>
+          </tr>
+     </tbody>
+  </table>
+
+  <table id="Data" class="Detaildata hide-on-med-and-up" style="table-layout: fixed; width: 100%; border-collapse: collapse; margin-top: 5%;">
+    <tbody>
+        <tr>
+          <td colspan="2" width="100%" style="text-align: center; padding: 3vw 0 3vw 0;">
+            <div id="DetailTime1" class="Detailtime" style="font-size: 20vw; line-height: 20vw; font-weight: 200;"></div>
+            <div id="DetailDate1" class="DetaildateM"><div>
+
+            </td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>NAME</td><td class='tdTextM' style="line-height: 5vw; font-weight: 200;"><span><%= selectedRiver.name %></span><br><span style="font-size: 4vw;"><%= selectedRiver.indigenousName %><br><%= selectedRiver.translation %></span></td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>CURRENT FLOW</td><td class='tdTextM'><%= selectedRiver.currentFlow %> cfs</td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>MEAN FLOW</td><td class='tdTextM'><%= Math.round(selectedRiver.meanFlow) %> cfs</td>
+        </tr>
+        <!--tr>
+          <td height="5%" class='tdTextM'>TEMP</td><td class='tdTextM'>52&deg; F (11&deg; C)</td>
+        </tr-->
+        <tr>
+          <td height="5%" class='tdTextM'>LATITUDE</td><td class='tdTextM'><%= selectedRiver.latitude %></td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>LONGITUDE</td><td class='tdTextM'><%= selectedRiver.longitude %></td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>ELEVATION</td><td class='tdTextM'><%= selectedRiver.elevation %></td>
+        </tr>
+        <tr>
+          <td height="5%" class='tdTextM'>DRAINAGE</td><td class='tdTextM'><%= selectedRiver.drainageArea %> mi<sup>2</sup></td>
+        </tr>         <tr>
+          <td colspan="2" height="80%" class='tdTextM' style="vertical-align: top; padding-top: 12px; font-size: 4vw;"><%= selectedRiver.description %><br><br><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="width: 100%; padding: 0; background: url('images/RiverDetail<%= selectedRiver.sequenceNumber %>.png'); background-size: cover;"> &nbsp;
+            <table style="border: 0; padding: 0; margin: 0;">
+              <tr>
+                <td class="d" width="100%" align="center">
+                    <img src="svg/RiverTimeClockPointer.svg">
+                </td>
+              </tr>
+              <td class="c"  width="100%" style="padding: 0 4vw 0 4vw;">
+                <div id="Clock1Detail" class="clock">
+                    <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                    <img src="svg/RiverTimeClockHours.svg"   class="clockDial" style="z-index: 101;">
+                    <img src="svg/RiverTimeClockMinutes.svg" class="clockDial" style="z-index: 102;">
+                    <img src="svg/RiverTimeClockSeconds.svg" class="clockDial" style="z-index: 103;">
+               </div>
+              </td>      
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="border: 0; width: 100%;">
+              <div style="filter: grayscale(99); width: 100%; margin-left: auto; margin-right: auto; margin-top: 15vw;">
+                <iframe src="<%= selectedRiver.googleMap %>" 
+                frameborder="0"  style="width: 100%; height: 50vw; border:0;margin-left: auto; margin-right: auto;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>            </td>
+        </tr>
+   </tbody>
+</table>  
+
+</div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+  <script>
+      // // startDate = "2020-06-04";
+      // startDate = new Date(2020,5,4);
+      // startTime = startDate.getTime();
+      // now = new Date().getTime();
+      // tDif = now - startTime;
+      // //rtStartDate = Date.parse("<%= selectedRiver.rtStartDate %>");
+      // rtStartTime = Date.parse("<%= selectedRiver.rtStartDate %>");
+      // currentFlow = <%= selectedRiver.currentFlow %>;
+      // meanFlow = <%= selectedRiver.meanFlow %>;
+      // dev = currentFlow/meanFlow;
+      // rtDif = tDif*dev 
+      // newTime = rtStartTime+rtDif;
+      // rTime = new Date(newTime);
+
+      // startDate = "2020-01-01";
+
+      var today = new Date();
+      var amtOffset = <%= selectedRiver.offset %>;
+      var startDate = new Date(2020,0,1);
+      var midnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      var timeStart = midnight.getTime();
+      var tTemp = timeStart-startDate.getTime();
+      tTemp = tTemp*amtOffset;
+      tTemp = tTemp+startDate.getTime();
+      dTemp = new Date(tTemp);
+
+      now = new Date().getTime();
+      tDif = now - timeStart;
+
+      currentFlow = <%= selectedRiver.currentFlow %>;
+      meanFlow = <%= selectedRiver.meanFlow %>;
+      dev = currentFlow/meanFlow;
+      rtDif = tDif*dev 
+      rtStartTime = dTemp.getTime()
+      newTime = rtStartTime+rtDif;
+      rTime = new Date(newTime);
+
+      lastDay = moment(rTime).format('D');
+      document.getElementById("DetailDate0").innerText = moment(rTime).format('dddd, MM.DD.YYYY')
+      document.getElementById("DetailDate0").innerText = moment(rTime).format('dddd, MM.DD.YYYY')
+
+      var lastSecond = 0;
+      currentDiv = "RiverDetail";
+
+      function switchTo(div) {
+        fadeOutDIV(currentDiv);
+        currentDiv = div;
+        window.location.assign(div);
+      }
+
+      function fadeOutDIV(d) {
+        document.getElementById(d).classList.remove('visibleDIV');
+        document.getElementById(d).style.opacity = 0;
+        document.getElementById(d).classList.add('hiddenDIV');
+      }
+
+      function fadeInDIV(d){
+        toggleDisplay(d)
+         document.getElementById(d).classList.remove('hiddenDIV');
+         document.getElementById(d).style.opacity = 1;
+        document.getElementById(d).classList.add('visibleDIV');
+      }
+
+      function toggleDisplay(d) {
+        if (document.getElementById(d).style.display == 'block') {
+          document.getElementById(d).style.display = 'none';
+        } else {
+          document.getElementById(d).style.display = 'block';
+        }
+      }
+
+      function showName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+      function hideName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+  
+      function updateClocks() {
+          updateClock("Clock0Detail",dev);
+          updateClock("Clock1Detail",dev);
+      }
+      
+      function updateClock(clockID, dev){
+          var clock = document.getElementById(clockID);
+          var dateNow = new Date();
+          var timeNow = dateNow.getTime();
+          var tDif = timeNow - timeStart;
+          var rtDif = tDif*dev;
+          var newTime = rtStartTime+rtDif;
+          var rTime = new Date(newTime);
+          var hour_as_degree   = ( rTime.getHours()   + rTime.getMinutes()/60 + rTime.getSeconds()/3600) / 24 * 360
+          var minute_as_degree = ( rTime.getMinutes() + rTime.getSeconds()/60) / 60 * 360
+          var second_as_degree = ( rTime.getSeconds() + rTime.getMilliseconds()/1000 ) /60 * 360
+          clock.children[3].style.transform = 'rotate(' + second_as_degree + 'deg)';
+          clock.children[2].style.transform = 'rotate(' + minute_as_degree + 'deg)';
+          clock.children[1].style.transform = 'rotate(' + hour_as_degree   + 'deg)';
+          if(rTime.getDay() != lastDay) {
+            document.getElementById("DetailDate0").innerText = moment(rTime).format('dddd, MM.DD.YYYY')
+            document.getElementById("DetailDate0").innerText = moment(rTime).format('dddd, MM.DD.YYYY')
+           lastDay = rTime.getDay();
+          }
+      }
+      function initializeClock(clockID) {
+          var clock = document.getElementById(clockID);
+      }
+  
+      function updateTime() {
+
+          var dateNow = new Date();
+          var timeNow = dateNow.getTime();
+          var startDate = new Date(2020,5,4);
+          var startTime = startDate.getTime();
+          var tDif = timeNow - startTime;
+          dev = currentFlow/meanFlow;
+          var rtDif = tDif*dev;
+          var rtStTime = Date.parse("<%= selectedRiver.rtStartDate %>");
+          var newTime = rtStTime+rtDif;
+          var rTime = new Date(newTime);
+          let hr = rTime.getHours();
+          let min = rTime.getMinutes();
+          let sec = rTime.getSeconds();
+          if (hr  <10) { hr  = "0"+hr; }
+          if (min <10) { min = "0"+min;}
+          if (sec <10) { sec = "0"+sec;}
+          document.getElementById("DetailTime0").innerText = hr+":"+min+":"+sec;
+          document.getElementById("DetailTime1").innerText = hr+":"+min+":"+sec;
+      }
+
+      function refreshPage() {
+          location.reload();
+      }
+      setTimeout(refreshPage,1*60*1000)
+  
+      M.AutoInit();
+
+      updateTime();
+      initializeClock("Clock0");
+      setInterval(updateTime, 100);
+      setInterval(updateClocks,50);
+
+      
+jQuery(document).ready(function(){
+  $(".dropdown-trigger").dropdown();
+  document.getElementById("RiverDetail").classList.remove('hiddenDIV');
+  document.getElementById("RiverDetail").style.opacity = 1;
+  document.getElementById("RiverDetail").classList.add('visibleDIV');
+});
+
+$(document).click(function(){
+    $('li[id^="select-options"]').on('touchend', function (e) {
+        e.stopPropagation();
+    });
+});
+  </script>
+ </html>

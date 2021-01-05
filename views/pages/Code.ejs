@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <style>
+    body {
+      background-color: #000000;
+      color: white;
+    }
+    nav {
+      background-color: #000000;
+      color: white;
+    }
+
+    nav .brand-logo {
+      color: white;
+
+    }
+
+    nav a {
+      color: white;
+    }
+
+    nav ul a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!--div class="navbar-fixed"-->
+  <nav class="z-depth-0" role="navigation" style="background-color: #000000; color: white;">
+      <div class="nav-wrapper container"  style="background-color: #000000; color: white;"><a id="logo-container" href="javascript:switchTo('Clock')" style="padding-left: 1vw"><img src="images/AlaskaRiverTimeWhite.png" style="width: 15vw; min-width: 130px;"></a>
+      <ul class="right hide-on-small-only">
+        <li><a href="javascript:switchTo('Clock')">Clock</li></a></li>
+        <li><a href="javascript:switchTo('Rivers')">Rivers</a></li>
+        <li><a href="javascript:switchTo('Observations')">Observations</a></li>
+        <li><a href="javascript:switchTo('About')">About</a></li>
+        <li><a href="javascript:switchTo('Code')">Code</a></li>
+	    </ul>
+	    <ul class="right hide-on-med-and-up">
+        <li class="right"><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
+      </ul>
+      <ul id="dropdown1" class="dropdown-content mega">
+        <li><a href="Clock">Clock</a></li>
+        <li><a href="Rivers">Rivers</a></li>
+        <li><a href="Observations">Observations</a></li>
+        <li><a href="About">About</a></li>
+        <li><a href="Code">Code</a></li>
+    </div>
+    </div>
+  </nav>
+
+  <div id="Code" class="container hiddenDIV" style="position: relative; opacity: 0; top: 50px;">
+    <table class="Data" style="table-layout: fixed; width: 100%;">
+       <tbody>
+       <tr valign="top">
+         <td class="d" width="60%">
+           <p style="font-size: 2rem; margin-top: 0;">The Code</p>
+           <p style="font-size: 1.2rem;">The Alaska River Time application is written in Javascript, with the server-side 
+          code running as a <a href="https://nodejs.org/">Node.js</a> application using the 
+          <a href="https://expressjs.com/">Express</a> and <a href="https://materializecss.com/">Materialize</a> application frameworks.</a>
+             
+             <p style="font-size: 1.2rem;">Code for the application is available on the 
+              <a href="https://github.com/AnchorageMuseum/Rivertime">Anchorage Museum GitHub repository</a>.</p>
+             
+  
+            <p style="font-size: 1.2rem;">For more information about the code, contact us at 
+              <a href="dmailto:developer@anchoragemuseum.org">developer@anchoragemuseum.org</a>.</p>
+          
+              
+            <img src="images/code2.png" style="margin-top: 60px;">
+         </td>
+         <td width="40%">&nbsp;</td>
+      </tr>
+     </tbody>
+     </table>
+   </div> 
+  
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/init.js"></script>
+  
+    </body>
+    <script>
+        currentDiv = "Code";
+  
+        function switchTo(div) {
+          fadeOutDIV(currentDiv);
+          currentDiv = div;
+          window.location.assign(div);
+        }
+  
+        function fadeOutDIV(d) {
+          document.getElementById(d).classList.remove('visibleDIV');
+          document.getElementById(d).style.opacity = 0;
+          document.getElementById(d).classList.add('hiddenDIV');
+        }
+  
+        function fadeInDIV(d){
+          toggleDisplay(d)
+          document.getElementById(d).classList.remove('hiddenDIV');
+          document.getElementById(d).style.opacity = 1;
+          document.getElementById(d).classList.add('visibleDIV');
+        }
+  
+        function toggleDisplay(d) {
+          if (document.getElementById(d).style.display == 'block') {
+            document.getElementById(d).style.display = 'none';
+          } else {
+            document.getElementById(d).style.display = 'block';
+          }
+        }
+  
+        function showName(clock) {
+            var rn = clock.id.replace("Clock","rn")
+            document.getElementById(rn).classList.toggle('riverNameActive');
+        }
+    
+        function hideName(clock) {
+            var rn = clock.id.replace("Clock","rn")
+            document.getElementById(rn).classList.toggle('riverNameActive');
+        }
+    
+        M.AutoInit();
+  
+  jQuery(document).ready(function(){
+      $(".dropdown-trigger").dropdown();
+      document.getElementById("Code").classList.remove('hiddenDIV');
+      document.getElementById("Code").style.opacity = 1;
+      document.getElementById("Code").classList.add('visibleDIV');
+  });
+  
+  $(document).click(function(){
+      $('li[id^="select-options"]').on('touchend', function (e) {
+          e.stopPropagation();
+      });
+  });
+    </script>
+   </html>

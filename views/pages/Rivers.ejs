@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <style>
+    body {
+      background-color: #003dff;
+    }
+    nav {
+      background-color: #003dff;
+      color: white;
+    }
+
+    nav .brand-logo {
+      color: white;
+
+    }
+
+    nav a {
+      color: white;
+    }
+
+    nav ul a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!--div class="navbar-fixed"-->
+  <nav class="z-depth-0" role="navigation" style="background-color: #003dff; color: white;">
+      <div class="nav-wrapper container"  style="background-color: #003dff; color: white;"><a id="logo-container" href="javascript:switchTo('Clock')" style="padding-left: 1vw"><img src="images/AlaskaRiverTimeWhite.png" style="width: 15vw; min-width: 130px;"></a>
+      <ul class="right hide-on-small-only">
+        <li><a href="javascript:switchTo('Clock')">Clock</li></a></li>
+        <li><a href="javascript:switchTo('Rivers')">Rivers</a></li>
+        <li><a href="javascript:switchTo('Observations')">Observations</a></li>
+        <li><a href="javascript:switchTo('About')">About</a></li>
+        <li><a href="javascript:switchTo('Code')">Code</a></li>
+	    </ul>
+	    <ul class="right hide-on-med-and-up">
+        <li class="right"><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
+      </ul>
+      <ul id="dropdown1" class="dropdown-content mega">
+        <li><a href="Clock">Clock</a></li>
+        <li><a href="Rivers">Rivers</a></li>
+        <li><a href="Observations">Observations</a></li>
+        <li><a href="About">About</a></li>
+        <li><a href="Code">Code</a></li>
+    </div>
+  </nav>
+
+<div id="Rivers" class="container hiddenDIV" style="margin-top: 5vw; position: relative; opacity: 0;">
+  <div class=" hide-on-small-only">
+    <img src="images/BlueMap.png" style="width: 100%; position: relative; top: 0; left: 0;">
+
+    <div id="BlueClockDiv0" class="container" style="width: 12vw; position: absolute; top: 18vw; left: 46.5vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData0" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock0" class="clock" onclick="switchTo('River?r=0')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhite">SHIP<br>CREEK</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClockDiv1" class="container" style="width: 12vw; position: absolute; top: 20vw; left: 36.5vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData1" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock1" class="clock" onclick="switchTo('River?r=1')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhite">CAMPBELL<br>CREEK</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock2Div" class="container" style="width: 12vw; position: absolute; top: 9vw; left: 53vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData2" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock2" class="clock" onclick="switchTo('River?r=2')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhite">KNIK<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock3Div" class="container" style="width: 12vw; position: absolute; top: 0.55vw; left: 45vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData3" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock3" class="clock" onclick="switchTo('River?r=3')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhite">MATANUSKA<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock4Div" class="container" style="width: 12vw; position: absolute; top: 1vw; left: 26vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData4" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock4" class="clock" onclick="switchTo('River?r=4')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhite">SUSITNA<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class=" hide-on-med-and-up">
+    <img src="images/BlueMapMobile.png" style="width: 100%; position: relative; top: 0; left: 0;">
+
+    <div id="BlueClockDiv10" class="container" style="width: 25vw; position: absolute; top: 43.5vw; left: 48vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData10" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock10" class="clock" onclick="switchTo('River?r=0')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhiteM">SHIP<br>CREEK</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClockDiv11" class="container" style="width: 25vw; position: absolute; top: 47vw; left: 23.5vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData11" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock11" class="clock" onclick="switchTo('River?r=1')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhiteM">CAMPBELL<br>CREEK</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock12Div" class="container" style="width: 25vw; position: absolute; top: 21.5vw; left: 62vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData12" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock12" class="clock" onclick="switchTo('River?r=2')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhiteM">KNIK<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock13Div" class="container" style="width: 25vw; position: absolute; top: 2.5vw; left: 46vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData13" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock13" class="clock" onclick="switchTo('River?r=3')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhiteM">MATANUSKA<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div id="BlueClock14Div" class="container" style="width: 25vw; position: absolute; top: 3vw; left: 2vw; z-index: 200; cursor: pointer;">
+      <table id="BlueData14" class="data" style="table-layout: fixed; width: 100%;">
+        <tbody>
+          <tr>
+              <td class="d" align="center">
+                  <img src="svg/RiverTimeClockPointer-white.svg">
+              </td>
+        </tr>
+          <tr>
+              <td class="c">
+                  <div id="BlueClock14" class="clock" onclick="switchTo('River?r=4')">
+                      <img src="images/blank.png" style="width: 100%; z-index: 99;">
+                      <img src="svg/RiverTimeClockHours-white.svg"   class="clockDial" style="z-index: 101;">
+                      <img src="svg/RiverTimeClockMinutes-white.svg" class="clockDial" style="z-index: 102;">
+                      <img src="svg/RiverTimeClockSeconds-white.svg" class="clockDial" style="z-index: 103;">
+                      <img src="images/BlueDot.png" class="clockDial" style="z-index: 100;">
+                      <div class="riverNameWhiteM">SUSITNA<br>RIVER</div>
+                  </div>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div> 
+</div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/init.js"></script>
+  <script src="Data"></script>
+
+  </body>
+  <script>
+      var today = new Date();
+      var meanTotal = 0;
+      dev = [];
+        for (var i=0; i< river.length; i++) {
+            dev[i] = (river[i].currentFlow/river[i].meanFlow) - 1.0;
+            meanTotal += dev[i];
+        }
+      amtDev = meanTotal/5;
+      var offset = [0.287742048, 0.581355466, .21509694, 0.28148, 0.47680];
+      var amtOffset = (offset[0]+offset[1]+offset[2]+offset[3]+offset[4])/5;
+      var startDate = new Date(2020,0,1);
+      var midnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      var timeStart = midnight.getTime();
+      var newStart = Math.abs(timeStart-startDate)*amtOffset+startDate;
+      var dy = [0,0,0,0,0];
+      var lastSecond = 0;
+      currentDiv = "Rivers";
+
+      function switchTo(div) {
+        fadeOutDIV(currentDiv);
+        currentDiv = div;
+        window.location.assign(div);
+      }
+
+      function fadeOutDIV(d) {
+        document.getElementById(d).classList.remove('visibleDIV');
+        document.getElementById(d).style.opacity = 0;
+        document.getElementById(d).classList.add('hiddenDIV');
+      }
+
+      function fadeInDIV(d){
+        toggleDisplay(d)
+        document.getElementById(d).classList.remove('hiddenDIV');
+        document.getElementById(d).style.opacity = 1;
+        document.getElementById(d).classList.add('visibleDIV');
+      }
+
+      function toggleDisplay(d) {
+        if (document.getElementById(d).style.display == 'block') {
+          document.getElementById(d).style.display = 'none';
+        } else {
+          document.getElementById(d).style.display = 'block';
+        }
+      }
+
+      function showName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+      function hideName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+  
+      function updateClocks() {
+          updateClock(0,"BlueClock0",dev[0]);
+          updateClock(1,"BlueClock1",dev[1]);
+          updateClock(2,"BlueClock2",dev[2]);
+          updateClock(3,"BlueClock3",dev[3]);
+          updateClock(4,"BlueClock4",dev[4]);
+          updateClock(0,"BlueClock10",dev[0]);
+          updateClock(1,"BlueClock11",dev[1]);
+          updateClock(2,"BlueClock12",dev[2]);
+          updateClock(3,"BlueClock13",dev[3]);
+          updateClock(4,"BlueClock14",dev[4]);
+      }
+      
+      function updateClock(i,clockID, dev){
+        var clock = document.getElementById(clockID);
+          var dateNow = new Date();
+          var timeNow = dateNow.getTime();
+          var tDif = timeNow - timeStart;
+          var rate = river[i].currentFlow/river[i].meanFlow;
+          var newTime = timeStart+tDif*(river[i].currentFlow/river[i].meanFlow);
+          timeAMRT = new Date(newTime)
+          var hour_as_degree   = ( timeAMRT.getHours()   + timeAMRT.getMinutes()/60 + timeAMRT.getSeconds()/3600) / 24 * 360
+          var minute_as_degree = ( timeAMRT.getMinutes() + timeAMRT.getSeconds()/60) / 60 * 360
+          var second_as_degree = ( timeAMRT.getSeconds() + timeAMRT.getMilliseconds()/1000 ) /60 * 360
+          clock.children[3].style.transform = 'rotate(' + second_as_degree + 'deg)';
+          clock.children[2].style.transform = 'rotate(' + minute_as_degree + 'deg)';
+          clock.children[1].style.transform = 'rotate(' + hour_as_degree   + 'deg)';
+          if(timeAMRT.getSeconds() % 59 == 0) {
+
+          }
+      }
+      function initializeClock(clockID) {
+          var clock = document.getElementById(clockID);
+      }
+  
+      function updateTime() {
+          var dateNow = new Date();
+          var dateNowStr = dateNow.toString().substr(0,24);
+          var diff = dateNow.getTime()-timeStart;
+          var newTime = dateNow.getTime()+diff*amtDev;
+          timeAMRT = new Date(newTime)
+          var date = new Date();
+          let hr = timeAMRT.getHours();
+          let min = timeAMRT.getMinutes();
+          let sec = timeAMRT.getSeconds();
+          lastSecond = sec;
+          if (hr  <10) { hr  = "0"+hr; }
+          if (min <10) { min = "0"+min;}
+          if (sec <10) { sec = "0"+sec;}
+      }
+  
+      function showTime() {
+
+      }
+  
+      function shiftBackground(i) {
+          dy[i]++;
+          if (dy[i]>39) { 
+              dy[i] = 0;
+          }
+          document.getElementById("River"+i).style.backgroundPosition = "0px "+dy[i]+"px"
+      }
+
+      function refreshPage() {
+          location.reload();
+      }
+      setTimeout(refreshPage,1*60*1000)
+  
+      M.AutoInit();
+      updateTime();
+      initializeClock("Clock0");
+      setTimeout(showTime,500);
+      setInterval(updateTime,100);
+      setInterval(updateClocks,50);
+
+      
+jQuery(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
+    document.getElementById("Rivers").classList.remove('hiddenDIV');
+    document.getElementById("Rivers").style.opacity = 1;
+    document.getElementById("Rivers").classList.add('visibleDIV');
+});
+
+$(document).click(function(){
+    $('li[id^="select-options"]').on('touchend', function (e) {
+        e.stopPropagation();
+    });
+});
+  </script>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+<div id="About" class="container hiddenDIV" style="position: relative; opacity: 0; top: 50px;">
+	<table class="data" style="table-layout: fixed; width: 100%;">
+	   <tbody>
+		 <tr valign="top">
+			 <td class="d" width="60%">
+				 <p style="font-size: 2rem; margin-top: 0;">Sourcing the Future in Nature</p>
+				 <p style="font-size: 1.2rem;">Standard time is measured by atomic clocks, providing a technical basis 
+					for global transactions independent of the environment in which we live. Rivers offer an alternative. 
+					Monitoring their natural flow makes us more attentive to ground conditions. Spanning deep time and 
+					changing with the seasons, they’re a meaningful source of ecological wisdom &mdash; today and tomorrow.</p>
+				   
+				   <p style="font-size: 1.2rem;">Alaska River Time engages a network of glacial and spring rivers to 
+					regulate a new kind of clock, which speeds up and slows down with the waters. The clock can be used 
+					to recalibrate all aspects of life from work schedules to personal relationships.</p>
+				   
+				   <p style="font-size: 1.2rem;">River Time is applicable locally and globally, a new standard of ground truth 
+					that will be increasingly relevant as we reinforce and reimagine our relationships with the natural world.</p>
+
+					<p style="font-size: 1.2rem;">River Time is a creative work by Jonathon Keats. Keats is an experimental philosopher, artist and writer. 
+          He creates conceptually driven interdisciplinary art projects that pose questions about the Universe.</p>
+
+          <p style="font-size: 1.2rem;">Standard time is measured by atomic clocks, providing a technical basis 
+           for global transactions independent of the environment in which we live. Rivers offer an alternative. 
+           Monitoring their natural flow makes us more attentive to ground conditions. Spanning deep time and 
+           changing with the seasons, they’re a meaningful source of ecological wisdom &mdash; today and tomorrow.</p>
+    
+          <p style="font-size: 2rem;">Calculating River Time</p>
+
+          <p style="font-size: 1.2rem;">River time is calculated by comparing the current flow of a stream against its 
+          long-term historical (11 - 73 year) average flow. If the current flow is faster than the historical average, river time runs
+          faster than standard time, and if the flow is slower than the historical average, river time runs slower.</p>
+
+          <p style="font-size: 1.2rem;">For example, if the historical average for a stream is 1000 cubic feet per second (cfs) and the current flow 
+          is 1200 cfs (20% more water volumne), then 60 seconds of river time will be equal to 50 seconds of standard 
+          time (time running 20% faster). The same stream, flowing at a rate of 400 cfs (60% slower) would result in river time
+          running 60% slower than standard time, and 60 seconds of river time would equal 150 seconds of standard time.
+          </p>
+
+          <p style="font-size: 1.2rem;">During winter months, flow tends to be significantly lower due to lower temperatures, with the stream water
+            freezing, precipitation falling as snow rather than rain, and little or no glacial melting, with a corresponding slowdown
+            of river time. In warmer summer months, melting snow and glacial ice, and preciptation falling as rain dramatically 
+            increase the flow, and river time speeds up.
+          </p>
+
+          <p style="font-size: 1.2rem;">The calculation of Alaska river time began on January 1, 2020, and over the course of a year, if the streams flow averages out to the historical annual flow, river time will also average 
+            out to standard time: falling behind during winter months, and catching up again during summer. However, if weather (increased
+            rainfall, drought, etc.) and climate (changing average temperature, shifting weather patterns, etc.) changes occur, river time will drift 
+            away from standard time, falling ahead or behind over the years.
+          </p>
+
+          <p style="font-size: 1.2rem;">Alaska mean river time is calculated by combining the river time rates of Ship Creek, Campbell Creek, Knik River,
+            Matanuska River and Susitna River to generate an average time affected by the unique characteristics of each stream. Flow data for 
+            each stream is gathered from gauges maintained by the U.S. Geological Survery (USGS), with measurements reported
+            every 15-30 minutes on the <a href="https://waterdata.usgs.gov/nwis">USGS Water Data</a> website, and is used to calculate
+            the river time for each individual river, plus a combined Alaska mean river time with each stream given equal weight.
+          </p>
+            
+          <p style="font-size: 2rem;">SEED Lab</p>
+
+					<p style="font-size: 1.2rem;">Alaska River Time is a project of the Anchorage Museum and its SEED Lab. It is part of a series of 
+          public artworks that examine future + climate and connections to the natural world through art and design.</p>
+          
+          <p style="font-size: 1.2rem;">SEED Lab is a space and a way of thinking, creating and convening, seeking creative and critical ways of 
+            responding to climate change. We host conversations and organize a series of public art projects.</p>
+
+          <p style="font-size: 1.2rem;">For more information about how to get involved or collaborate on a project or event, contact us at 
+            <a href="mailto:seed@anchoragemuseum.org">seed@anchoragemuseum.org</a>. For information about public events held at or with SEED Lab, follow us on 
+            Instagram or check the Museum calendar at <a href="https://www.anchoragemuseum.org/visit/calendar/">https://www.anchoragemuseum.org/visit/calendar/</a>.</p>
+          
+          <p style="font-size: 1.2rem;">SEED Lab is one of five winners of the Bloomberg Philanthropies Public Art Challenge. The 
+            Municipality of Anchorage is a partner with the Anchorage Museum to create public art that 
+            explores pressing social issues.</p>
+				   <img src="svg/DialLabels.svg" style="width: 30vw; margin-top: 1vw; margin-bottom: 4vw;">
+			 </td>
+			 <td class="d"width="40%" style="background: url('images/globeRiver.png'); background-size: contain; background-repeat: no-repeat;">
+			   <div style="position: relative;">
+				 <img src="svg/globe.svg" style="width: 90%; margin-top: 20vw;">
+			 </div>
+		   </td>
+	  </tr>
+	 </tbody>
+   </table>
+ </div> 
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+  <script>
+      currentDiv = "About";
+
+      function switchTo(div) {
+        fadeOutDIV(currentDiv);
+        currentDiv = div;
+        window.location.assign(div);
+      }
+
+      function fadeOutDIV(d) {
+        document.getElementById(d).classList.remove('visibleDIV');
+        document.getElementById(d).style.opacity = 0;
+        document.getElementById(d).classList.add('hiddenDIV');
+      }
+
+      function fadeInDIV(d){
+        toggleDisplay(d)
+        document.getElementById(d).classList.remove('hiddenDIV');
+        document.getElementById(d).style.opacity = 1;
+        document.getElementById(d).classList.add('visibleDIV');
+      }
+
+      function toggleDisplay(d) {
+        if (document.getElementById(d).style.display == 'block') {
+          document.getElementById(d).style.display = 'none';
+        } else {
+          document.getElementById(d).style.display = 'block';
+        }
+      }
+
+      function showName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+      function hideName(clock) {
+          var rn = clock.id.replace("Clock","rn")
+          document.getElementById(rn).classList.toggle('riverNameActive');
+      }
+  
+      M.AutoInit();
+
+jQuery(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
+    document.getElementById("About").classList.remove('hiddenDIV');
+    document.getElementById("About").style.opacity = 1;
+    document.getElementById("About").classList.add('visibleDIV');
+});
+
+$(document).click(function(){
+    $('li[id^="select-options"]').on('touchend', function (e) {
+        e.stopPropagation();
+    });
+});
+  </script>
+ </html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Alaska RiverTime</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        .logo {
+            width: 75vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        .logoActive {
+            width: 75vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: opacity 1.0s ease-in;           
+        }
+		.logoInactive {
+            width: 75vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1.0s ease-out;           
+		}
+		   </style>
+</head>
+<body onload="activate()">
+    <img src="/images/logo.svg" id="logo" class="logo">
+</body>
+</html>
+<script>
+    function activate() {
+        document.getElementById("logo").className = "logoActive";
+	}
+	
+	function inactivate() {
+		document.getElementById("logo").className = "logoInactive";
+	}
+
+	function redirect(){
+		window.location.assign("Clock");
+	}
+
+	setTimeout(inactivate,2000);
+	setTimeout(redirect,300)
+</script>
